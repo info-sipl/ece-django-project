@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Search Products</title>
+</head>
+
+<body>
+
+    <h2>Search Products</h2>
+
+    <form method="GET" action="/search_product">
+        <input type="text" name="q" placeholder="Search by name or category" value="{{ query|default:'' }}">
+        <input type="submit" value="Search">
+    </form>
+
+    <hr>
+
+    <h3>Search Result</h3>
+    
+    {% if products %}
+    <table border="1">
+        <tr>
+            <th>Product Name</th>
+            <th>Brand Name</th>
+            <th>Price</th>
+            <th colspan="2">Actions</th>
+        </tr>
+        {% for x in products %}
+        <tr>
+            <td>{{ x.pname }}</td>
+            <td>{{ x.bname }}</td>
+            <td>{{ x.price }}</td>
+            <td><a href="/update/{{x.id}}">Modify</a></td>
+            <td><a href="/delete/{{x.id}}">Delete</a></td>
+        </tr>
+        
+        {% endfor %}
+    </table>
+    {% elif query %}
+
+    <p>No product available</p>
+
+    {% endif %}
+
+    <br>
+    <a href="/add_product_page">Add New Product</a>
+    <a href="/product_search_page">Search Product</a>
+    <a href="/">Go to Home Page</a>
+
+</body>
+
+</html>

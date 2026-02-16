@@ -1,0 +1,41 @@
+<html>
+
+<head>
+    <title>Add Products</title>
+</head>
+
+<body>
+    <h1>Update the Price</h1>
+
+
+    <form action="" method="POST">
+        {% csrf_token %} <!-- CROSS SITE REQUEST FORGERY TOKEN for data encryption -->
+        <table>
+            <tr>
+                <th>Brand</th>
+                <td><input type="text" placeholder="Enter your brand name" name="bname" value="{{ product.bname }}"
+                        required readonly></td>
+            </tr>
+
+            <tr>
+                <th>Product</th>
+                <td><input type="text" placeholder="Enter your product name" name="pname" value="{{ product.pname }}" required></td>
+            </tr>
+
+            <tr>
+                <th>Price</th>
+                <td><input type="number" placeholder="Enter your product price" name="price" value="{{ product.price }}" required></td>
+            </tr>
+            <tr>
+                <th><input type="submit" value="Modify"></th>
+                <th><input type="reset" value="Reset"></th>
+            </tr>
+        </table>
+    </form>
+
+    <h2>Update the price</h2>
+    <a href="/">Go to Update Page</a>
+
+</body>
+
+</html>

@@ -1,0 +1,38 @@
+<html>
+
+<head>
+    <title>Product Page</title>
+</head>
+
+<body>
+    <h1>Welcome</h1>
+    <!-- <a href="/about">Go to About Us Page</a>
+    <a href="/login">Go to Login Page</a> -->
+    <a href="/product_search_page">Search Product</a>
+
+    <form action="/add_product" method="POST">
+        {% csrf_token %} <!-- CROSS-SITE REQUEST FORGERY TOKEN -->
+        <table>
+            <tr>
+                <th>Product Name</th>
+                <td><input type="text" placeholder="Enter your Product Name" name="pname" required></td>
+            </tr>
+            <tr>
+                <th>Brand Name</th>
+                <td><input type="text" placeholder="Enter your Brnad Name" name="bname" required></td>
+            </tr>
+            <tr>
+                <th>Price</th>
+                <td><input type="text" placeholder="Enter product price" name="price" required></td>
+            </tr>
+           
+            <tr>
+                <th><input type="submit" value="Add Product"></th>
+                <th><input type="reset" value="Reset"></th>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

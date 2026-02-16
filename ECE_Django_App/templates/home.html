@@ -1,0 +1,23 @@
+<html>
+
+<head>
+    <title>Home Page</title>
+</head>
+
+<body>
+    <h1>Welcome to HOME Page</h1>
+    <h2>Hello {{ student.name }}, {{ student.id }}</h2>
+    <a href="/logout">Logout</a>
+
+
+    <form method="GET">
+        <input type="text" name="q" placeholder="Enter Product or Brand" value="{{ query|default:'' }}">
+        <button type="submit">Search</button>
+    </form>
+
+
+
+    
+</body>
+
+</html>

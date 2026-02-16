@@ -1,0 +1,33 @@
+<html>
+
+<head>
+    <title>Home Page</title>
+</head>
+
+<body>
+    <h1>Welcome to User Login</h1>
+    <a href="/about">Go to About Us Page</a>
+
+    <form action="/userlogin" method="POST">
+        {% csrf_token %} <!-- CROSS-SITE REQUEST FORGERY TOKEN -->
+        <table>
+            
+            <tr>
+                <th>Email</th>
+                <td><input type="email" placeholder="Enter your email" name="email" required></td>
+            </tr>
+            <tr>
+                <th>Password</th>
+                <td><input type="password" placeholder="Enter your password" name="password" required></td>
+            </tr>
+            
+            <tr>
+                <th><input type="submit" value="Login"></th>
+                <th><input type="reset" value="Reset"></th>
+            </tr>
+        </table>
+    </form>
+
+</body>
+
+</html>

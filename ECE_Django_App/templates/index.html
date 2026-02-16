@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Home Page</title>
+    </head>
+    <body>
+        <h1>Welcome</h1>
+        <a href="/about">Go to About Us Page</a>
+        <a href="/login">Go to Login Page</a>
+        <a href="/add_product_page">Go to Add Product Page</a>
+
+
+        <form action="/register" method="POST">
+             {% csrf_token %} <!-- CROSS-SITE REQUEST FORGERY TOKEN -->
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <td><input type="text" placeholder="Enter your full name" name="fname" required></td>
+                </tr>
+                <tr>
+                    <th>Email</th>
+                    <td><input type="email" placeholder="Enter your email" name="email" required></td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <td><input type="password" placeholder="Enter your password" name="password" required></td>
+                </tr>
+                <tr>
+                    <th>College</th>
+                    <td><input type="text" placeholder="Enter your college name" name="college" required></td>
+                </tr>
+                <tr>
+                    <th><input type="submit" value="Submit"></th>
+                    <th><input type="reset" value="Reset"></th>
+                </tr>
+            </table>
+        </form>
+
+    </body>
+</html>
